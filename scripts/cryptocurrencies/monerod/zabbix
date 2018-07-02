@@ -1,0 +1,46 @@
+#!/bin/bash
+
+case "$1" in
+'peers.in')
+	netstat -n |awk '{print $4}' | grep -c ':18080'
+	;;	
+'peers.in.established')
+	netstat -n | grep ESTABLISHED | awk '{print $4}' | grep -c ':18080'
+	;;	
+'peers.in.closewait')
+	netstat -n | grep CLOSE_WAIT | awk '{print $4}' | grep -c ':18080'
+	;;	
+'peers.in.syn')
+	netstat -n | grep SYN_RECV | awk '{print $4}' | grep -c ':18080'
+	;;	
+'peers.out')
+	netstat -n |awk '{print $5}' | grep -c ':18080'
+	;;
+'peers.out.established')
+	netstat -n | grep ESTABLISHED | awk '{print $5}' | grep -c ':18080'
+	;;	
+'peers.out.closewait')
+	netstat -n | grep CLOSE_WAIT | awk '{print $5}' | grep -c ':18080'
+	;;	
+'peers.out.syn')
+	netstat -n | grep SYN_RECV | awk '{print $5}' | grep -c ':18080'
+	;;	
+'sync.progress')
+	c=$(grep Synced /monero/monero.log | tail -1 | awk '{print $10}' | awk -F/ '{print $1}')
+	t=$(grep Synced /monero/monero.log | tail -1 | awk '{print $10}' | awk -F/ '{print $2}')
+	p=$(div $c $t)
+	echo $p
+	;;
+'net.bytes.in')
+	ifconfig eth0 |tail -2|head -1|sed -E 's/^.+RX bytes://' | awk '{print $1}'
+	;;
+'net.bytes.out')
+	ifconfig eth0 |tail -2|head -1|sed -E 's/^.+TX bytes://' | awk '{print $1}'
+	;;
+'core.restarted')
+	DATE=$(date +"%m-%d %H:%M" | rev | cut -c2- |rev) && grep "$DATE" /monero/monero.log |grep -c 'Core initialized OK'
+	;;
+*)
+	echo -1;
+	;;
+esac

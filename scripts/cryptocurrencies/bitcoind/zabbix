@@ -1,0 +1,43 @@
+#!/bin/bash
+
+case "$1" in
+'peers.in')
+	netstat -n |awk '{print $4}' | grep -c ':8333'
+	;;	
+'peers.in.established')
+	netstat -n | grep ESTABLISHED | awk '{print $4}' | grep -c ':8333'
+	;;	
+'peers.in.closewait')
+	netstat -n | grep CLOSE_WAIT | awk '{print $4}' | grep -c ':8333'
+	;;	
+'peers.in.syn')
+	netstat -n | grep SYN_RECV | awk '{print $4}' | grep -c ':8333'
+	;;	
+'peers.out')
+	netstat -n |awk '{print $5}' | grep -c ':8333'
+	;;
+'peers.out.established')
+	netstat -n | grep ESTABLISHED | awk '{print $5}' | grep -c ':8333'
+	;;	
+'peers.out.closewait')
+	netstat -n | grep CLOSE_WAIT | awk '{print $5}' | grep -c ':8333'
+	;;	
+'peers.out.syn')
+	netstat -n | grep SYN_RECV | awk '{print $5}' | grep -c ':8333'
+	;;	
+'sync.progress')
+	tail /bitcoin/debug.log |grep UpdateTip | tail -1 | sed -E 's/^.+progress=//' | awk '{print $1}'
+	;;
+'net.bytes.in')
+	ifconfig eth0 |tail -2|head -1|sed -E 's/^.+RX bytes://' | awk '{print $1}'
+	;;
+'net.bytes.out')
+	ifconfig eth0 |tail -2|head -1|sed -E 's/^.+TX bytes://' | awk '{print $1}'
+	;;
+'core.restarted')
+	DATE=$(date +"%m-%d|%H:%M" | rev | cut -c2- |rev) && grep "$DATE" /bitcoin/debug.log |grep -c 'net thread started'
+	;;
+*)
+	echo -1;
+	;;
+esac

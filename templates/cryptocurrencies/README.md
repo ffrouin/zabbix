@@ -25,3 +25,17 @@ needs.
 ![Bitcoind Peers](https://github.com/ffrouin/zabbix/tree/master/templates/cryptocurrencies/samples/bitcoind_peers.png)
 
 ![Bitcoind Sync](https://github.com/ffrouin/zabbix/tree/master/templates/cryptocurrencies/samples/bitcoind_sync.png)
+
+### Miningcore
+
+![Miningcore CPU/MEM](https://github.com/ffrouin/zabbix/tree/master/templates/cryptocurrencies/samples/miningcore_cpumem.png)
+
+![Miningcore Bandwidth](https://github.com/ffrouin/zabbix/tree/master/templates/cryptocurrencies/samples/miningcore_bandwidth.png)
+
+![Miningcore Litecoin Mining Pool](https://github.com/ffrouin/zabbix/tree/master/templates/cryptocurrencies/samples/miningcore_litecoin_pool.png)
+
+![Miningcore Vertcoin Mining Pool](https://github.com/ffrouin/zabbix/tree/master/templates/cryptocurrencies/samples/miningcore_vertcoin_pool.png)
+
+![Miningcore Bitcoin Mining Pool](https://github.com/ffrouin/zabbix/tree/master/templates/cryptocurrencies/samples/miningcore_bitcoin_pool.png)
+
+![Miningcore Monero Mining Pool](https://github.com/ffrouin/zabbix/tree/master/templates/cryptocurrencies/samples/miningcore_monero_pool.png)

@@ -16,10 +16,8 @@ needs.
 
 ### Bitcoind
 
-[Bitcoind CPU/MEM](https://github.com/ffrouin/zabbix/tree/master/templates/cryptocurrencies/samples/bitcoind_cpumem.png)
-
-### Litecoind
-
-### Vertcoind
-
-### Monerod
+![Bitcoind CPU/MEM](https://github.com/ffrouin/zabbix/tree/master/templates/cryptocurrencies/samples/bitcoind_cpumem.png)
+![Bitcoind Disk IO](https://github.com/ffrouin/zabbix/tree/master/templates/cryptocurrencies/samples/bitcoind_diskio.png)
+![Bitcoind Bandwidth](https://github.com/ffrouin/zabbix/tree/master/templates/cryptocurrencies/samples/bitcoind_bandwidth.png)
+![Bitcoind Peers](https://github.com/ffrouin/zabbix/tree/master/templates/cryptocurrencies/samples/bitcoind_peers.png)
+![Bitcoind Sync](https://github.com/ffrouin/zabbix/tree/master/templates/cryptocurrencies/samples/bitcoind_sync.png)

@@ -16,7 +16,7 @@ needs.
 
 ### Bitcoind
 
-![Bitcoind CPU/MEM](https://github.com/ffrouin/zabbix/tree/master/templates/cryptocurrencies/samples/bitcoind_cpumem.png)
+[Bitcoind CPU/MEM](https://github.com/ffrouin/zabbix/tree/master/templates/cryptocurrencies/samples/bitcoind_cpumem.png)
 
 ### Litecoind
 

@@ -12,6 +12,9 @@ You'll need to review item configuration in templates because of the
 architecture you deployed to answer your cryptocurrency application
 needs.
 
+An external script is required to collect data from cryptocurrency
+application log file. Please consult [this section](https://github.com/ffrouin/zabbix/tree/master/scripts/cryptocurrencies)
+
 ## Reporting samples
 
 ### Bitcoind
